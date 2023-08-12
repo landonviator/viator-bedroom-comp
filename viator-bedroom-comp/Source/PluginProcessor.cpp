@@ -188,11 +188,11 @@ void ViatorbedroomcompAudioProcessor::updateParameters()
     auto hpf1 = _treeState.getRawParameterValue(ViatorParameters::comp1HPFID)->load();
     auto type1 = _treeState.getRawParameterValue(ViatorParameters::comp1TypeID)->load();
     
+    compressorModule.setCompressorType(static_cast<viator_dsp::Compressor<float>::CompressorType>(type1));
     compressorModule.setInputGain(comp1Gain);
     compressorModule.setOutputGain(comp1Volume);
     compressorModule.setMix(comp1Mix);
     compressorModule.setParameters(thresh1, ratio1, attack1, release1, knee1, hpf1);
-    compressorModule.setCompressorType(static_cast<viator_dsp::Compressor<float>::CompressorType>(type1));
 }
 
 //==============================================================================
