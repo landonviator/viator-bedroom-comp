@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="wn8i4m" name="viator-bedroom-comp" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
-              companyName="Viator DSP" pluginName="Bedroom Comp MkII">
+              companyName="Viator DSP" pluginName="Bedroom Comp MkII" version="1.1.0">
   <MAINGROUP id="wBBXRb" name="viator-bedroom-comp">
     <GROUP id="{BDB0CB11-F836-D364-1E2E-E375BE190F2C}" name="Source">
       <GROUP id="{C0EB66F6-22C9-F3E8-7B2A-2FC99FBA80CB}" name="Assets">
