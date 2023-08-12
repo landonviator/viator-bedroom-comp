@@ -23,12 +23,14 @@ private:
     
     // comps
     Header _headerComp;
-    
     CompressorComp _compressorComp;
     
     // tooltip
     viator_gui::Label _tooltipLabel;
     void initTooltipLabel();
+    
+    // window
+    void savePluginBounds();
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ViatorbedroomcompAudioProcessorEditor)
 };

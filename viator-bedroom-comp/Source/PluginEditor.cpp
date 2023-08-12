@@ -15,7 +15,7 @@ ViatorbedroomcompAudioProcessorEditor::ViatorbedroomcompAudioProcessorEditor (Vi
     // tooltip
     initTooltipLabel();
     
-    viator_utils::PluginWindow::setPluginWindowSize(0, 0, *this, 1.75, 0.75);
+    viator_utils::PluginWindow::setPluginWindowSize(audioProcessor._width, audioProcessor._height, *this, 1.75, 1.0);
 }
 
 ViatorbedroomcompAudioProcessorEditor::~ViatorbedroomcompAudioProcessorEditor()
@@ -53,6 +53,9 @@ void ViatorbedroomcompAudioProcessorEditor::resized()
     auto labelFontSize = labelHeight * 0.4;
     _tooltipLabel.setBounds(0, getHeight() * 0.95, getWidth(), labelHeight);
     _tooltipLabel.setFont(juce::Font("Helvetica", labelFontSize, juce::Font::FontStyleFlags::bold));
+    
+    // Save plugin size in value tree
+    savePluginBounds();
 }
 
 void ViatorbedroomcompAudioProcessorEditor::setTooltipText(const juce::String &tooltip)
@@ -65,4 +68,12 @@ void ViatorbedroomcompAudioProcessorEditor::initTooltipLabel()
 {
     _tooltipLabel.setText("", juce::dontSendNotification);
     addAndMakeVisible(_tooltipLabel);
+}
+
+void ViatorbedroomcompAudioProcessorEditor::savePluginBounds()
+{
+    audioProcessor.variableTree.setProperty("width", getWidth(), nullptr);
+    audioProcessor.variableTree.setProperty("height", getHeight(), nullptr);
+    audioProcessor._width = getWidth();
+    audioProcessor._height = getHeight();
 }
