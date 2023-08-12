@@ -10,7 +10,7 @@ ViatorbedroomcompAudioProcessorEditor::ViatorbedroomcompAudioProcessorEditor (Vi
     
     // compressor comps
     addAndMakeVisible(_compressorComp);
-    _compressorComp.setName("Comp Stage One");
+    _compressorComp.setName("Bedroom Comp MkII");
     
     // tooltip
     initTooltipLabel();
