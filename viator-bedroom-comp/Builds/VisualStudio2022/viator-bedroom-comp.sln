@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio Version 17
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-bedroom-comp - Standalone Plugin", "viator-bedroom-comp_StandalonePlugin.vcxproj", "{C8152059-0A8A-E212-137C-A442885CF761}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB} = {32E69D69-C942-0D33-4511-7BC1E4D09DDB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-bedroom-comp - VST3", "viator-bedroom-comp_VST3.vcxproj", "{46EE3DB0-1D26-8A58-FC88-4D15E2A26C94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB} = {32E69D69-C942-0D33-4511-7BC1E4D09DDB}
+		{5E4B8968-5A40-44E9-CA2E-4E0B5E275838} = {5E4B8968-5A40-44E9-CA2E-4E0B5E275838}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-bedroom-comp - Shared Code", "viator-bedroom-comp_SharedCode.vcxproj", "{32E69D69-C942-0D33-4511-7BC1E4D09DDB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "viator-bedroom-comp - VST3 Manifest Helper", "viator-bedroom-comp_VST3ManifestHelper.vcxproj", "{5E4B8968-5A40-44E9-CA2E-4E0B5E275838}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46EE3DB0-1D26-8A58-FC88-4D15E2A26C94}.Debug|x64.ActiveCfg = Debug|x64
+		{46EE3DB0-1D26-8A58-FC88-4D15E2A26C94}.Debug|x64.Build.0 = Debug|x64
+		{46EE3DB0-1D26-8A58-FC88-4D15E2A26C94}.Release|x64.ActiveCfg = Release|x64
+		{46EE3DB0-1D26-8A58-FC88-4D15E2A26C94}.Release|x64.Build.0 = Release|x64
+		{C8152059-0A8A-E212-137C-A442885CF761}.Debug|x64.ActiveCfg = Debug|x64
+		{C8152059-0A8A-E212-137C-A442885CF761}.Debug|x64.Build.0 = Debug|x64
+		{C8152059-0A8A-E212-137C-A442885CF761}.Release|x64.ActiveCfg = Release|x64
+		{C8152059-0A8A-E212-137C-A442885CF761}.Release|x64.Build.0 = Release|x64
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB}.Debug|x64.ActiveCfg = Debug|x64
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB}.Debug|x64.Build.0 = Debug|x64
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB}.Release|x64.ActiveCfg = Release|x64
+		{32E69D69-C942-0D33-4511-7BC1E4D09DDB}.Release|x64.Build.0 = Release|x64
+		{5E4B8968-5A40-44E9-CA2E-4E0B5E275838}.Debug|x64.ActiveCfg = Debug|x64
+		{5E4B8968-5A40-44E9-CA2E-4E0B5E275838}.Debug|x64.Build.0 = Debug|x64
+		{5E4B8968-5A40-44E9-CA2E-4E0B5E275838}.Release|x64.ActiveCfg = Release|x64
+		{5E4B8968-5A40-44E9-CA2E-4E0B5E275838}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
