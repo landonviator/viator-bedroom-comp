@@ -242,7 +242,12 @@ bool ViatorbedroomcompAudioProcessor::isBusesLayoutSupported (const BusesLayout&
 void ViatorbedroomcompAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::dsp::AudioBlock<float> block {buffer};
-    compressorModule.process(juce::dsp::ProcessContextReplacing<float>(block));
+    auto compPower = _treeState.getRawParameterValue(ViatorParameters::comp1PowerID)->load();
+    
+    if (compPower)
+    {
+        compressorModule.process(juce::dsp::ProcessContextReplacing<float>(block));
+    }
 }
 
 void ViatorbedroomcompAudioProcessor::calculatePeakSignal(juce::AudioBuffer<float> &buffer)

@@ -41,7 +41,7 @@
  #define JucePlugin_Enable_ARA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "viator-bedroom-comp"
+ #define JucePlugin_Name                   "Bedroom Comp MkII"
 #endif
 #ifndef  JucePlugin_Desc
  #define JucePlugin_Desc                   "viator-bedroom-comp"
@@ -137,7 +137,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "Viator DSP: viator-bedroom-comp"
+ #define JucePlugin_IAAName                "Viator DSP: Bedroom Comp MkII"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16

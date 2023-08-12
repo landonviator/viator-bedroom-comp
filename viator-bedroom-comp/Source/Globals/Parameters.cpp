@@ -58,10 +58,10 @@ void ViatorParameters::Params::initSliderParams()
 
 void ViatorParameters::Params::initButtonParams()
 {
+    _buttonParams.push_back({ViatorParameters::comp1PowerID, ViatorParameters::comp1PowerName, true});
 }
 
 void ViatorParameters::Params::initMenuParams()
 {
     _menuParams.push_back({ViatorParameters::comp1TypeID, ViatorParameters::comp1TypeName, 0, 1, 0});
-    _menuParams.push_back({ViatorParameters::comp1PowerID, ViatorParameters::comp1PowerName, 0, 1, 1});
 }
