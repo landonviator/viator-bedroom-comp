@@ -2,6 +2,33 @@
 
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="viator-bedroom-comp\Source\Assets\decor">
+      <UniqueIdentifier>{1D6B18F9-E336-80F2-AD8D-72809DFFAFCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\Assets\faders">
+      <UniqueIdentifier>{ABCFBCDD-3ED4-3F0B-6F09-0829C9B65328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\Assets\knobs">
+      <UniqueIdentifier>{E1C77B36-A75C-5220-BD15-49C7524349C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\Assets\vu-meter">
+      <UniqueIdentifier>{D2AE0800-26F0-962E-3990-910DB278160A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\Assets">
+      <UniqueIdentifier>{211CC975-4BE2-0BB5-2CE5-C6E753CDB50D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\components\plugin modules">
+      <UniqueIdentifier>{2AFD8EF0-E7BA-EBFC-E068-89129A478C06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\components">
+      <UniqueIdentifier>{F380D7AA-6118-7959-C24B-90A6935BC903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\Globals">
+      <UniqueIdentifier>{8D578016-56BB-DDF6-5095-07267C6D49B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="viator-bedroom-comp\Source\LAF">
+      <UniqueIdentifier>{FB01D851-F121-FC8B-B10F-3432899DEFA7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="viator-bedroom-comp\Source">
       <UniqueIdentifier>{F6889333-E09A-032E-9B51-32811D55DDB6}</UniqueIdentifier>
     </Filter>
@@ -652,6 +679,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\components\plugin modules\CompressorComp.cpp">
+      <Filter>viator-bedroom-comp\Source\components\plugin modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\components\Header.cpp">
+      <Filter>viator-bedroom-comp\Source\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Globals\Globals.cpp">
+      <Filter>viator-bedroom-comp\Source\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Globals\Parameters.cpp">
+      <Filter>viator-bedroom-comp\Source\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\LAF\Colors.cpp">
+      <Filter>viator-bedroom-comp\Source\LAF</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp">
       <Filter>viator-bedroom-comp\Source</Filter>
     </ClCompile>
@@ -3235,6 +3277,33 @@
     <ClCompile Include="..\..\..\modules\viatordsp\viator_modules\viator_modules.cpp">
       <Filter>JUCE Modules\viator_modules</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData2.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData3.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData4.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData5.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData6.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData7.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData8.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData9.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
@@ -3285,6 +3354,21 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\components\plugin modules\CompressorComp.h">
+      <Filter>viator-bedroom-comp\Source\components\plugin modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\components\Header.h">
+      <Filter>viator-bedroom-comp\Source\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Globals\Globals.h">
+      <Filter>viator-bedroom-comp\Source\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Globals\Parameters.h">
+      <Filter>viator-bedroom-comp\Source\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\LAF\Colors.h">
+      <Filter>viator-bedroom-comp\Source\LAF</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PluginProcessor.h">
       <Filter>viator-bedroom-comp\Source</Filter>
     </ClInclude>
@@ -6369,6 +6453,9 @@
     <ClInclude Include="..\..\..\modules\viatordsp\viator_modules\viator_modules.h">
       <Filter>JUCE Modules\viator_modules</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
@@ -6377,6 +6464,78 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\Assets\decor\decor_grid.png">
+      <Filter>viator-bedroom-comp\Source\Assets\decor</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\decor\screw.png">
+      <Filter>viator-bedroom-comp\Source\Assets\decor</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\faders\Ver_flat_slider.png">
+      <Filter>viator-bedroom-comp\Source\Assets\faders</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\faders\Ver_slider.png">
+      <Filter>viator-bedroom-comp\Source\Assets\faders</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_01.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_02.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_03.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_04.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_05.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_06.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_07.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_08.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_09.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\knobs\Knob_10.png">
+      <Filter>viator-bedroom-comp\Source\Assets\knobs</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\back_vu-meter_decore5.png">
+      <Filter>viator-bedroom-comp\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meter.png">
+      <Filter>viator-bedroom-comp\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meterno_name.png">
+      <Filter>viator-bedroom-comp\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\vu-meter\vu_meter.png">
+      <Filter>viator-bedroom-comp\Source\Assets\vu-meter</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\back_a.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\but_small_rec_off.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\but_small_rec_on.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\landon.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\LED_meter.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Source\Assets\screen.png">
+      <Filter>viator-bedroom-comp\Source\Assets</Filter>
+    </None>
     <None Include="..\..\..\modules\JUCE\modules\juce_audio_devices\native\oboe\CMakeLists.txt">
       <Filter>JUCE Modules\juce_audio_devices\native\oboe</Filter>
     </None>

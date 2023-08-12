@@ -139,6 +139,11 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\components\plugin modules\CompressorComp.cpp"/>
+    <ClCompile Include="..\..\Source\components\Header.cpp"/>
+    <ClCompile Include="..\..\Source\Globals\Globals.cpp"/>
+    <ClCompile Include="..\..\Source\Globals\Parameters.cpp"/>
+    <ClCompile Include="..\..\Source\LAF\Colors.cpp"/>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp"/>
     <ClCompile Include="..\..\Source\PluginEditor.cpp"/>
     <ClCompile Include="..\..\..\modules\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
@@ -2577,6 +2582,15 @@
     <ClCompile Include="..\..\..\modules\viatordsp\viator_modules\viator_modules.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData2.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData3.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData4.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData5.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData6.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData7.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData8.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData9.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_devices.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp"/>
@@ -2599,6 +2613,11 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_viator_modules.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\components\plugin modules\CompressorComp.h"/>
+    <ClInclude Include="..\..\Source\components\Header.h"/>
+    <ClInclude Include="..\..\Source\Globals\Globals.h"/>
+    <ClInclude Include="..\..\Source\Globals\Parameters.h"/>
+    <ClInclude Include="..\..\Source\LAF\Colors.h"/>
     <ClInclude Include="..\..\Source\PluginProcessor.h"/>
     <ClInclude Include="..\..\Source\PluginEditor.h"/>
     <ClInclude Include="..\..\..\modules\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
@@ -3627,10 +3646,35 @@
     <ClInclude Include="..\..\..\modules\viatordsp\viator_modules\viator_utils\Window\Window.h"/>
     <ClInclude Include="..\..\..\modules\viatordsp\viator_modules\viator_utils\utils.h"/>
     <ClInclude Include="..\..\..\modules\viatordsp\viator_modules\viator_modules.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JucePluginDefines.h"/>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Source\Assets\decor\decor_grid.png"/>
+    <None Include="..\..\Source\Assets\decor\screw.png"/>
+    <None Include="..\..\Source\Assets\faders\Ver_flat_slider.png"/>
+    <None Include="..\..\Source\Assets\faders\Ver_slider.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_01.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_02.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_03.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_04.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_05.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_06.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_07.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_08.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_09.png"/>
+    <None Include="..\..\Source\Assets\knobs\Knob_10.png"/>
+    <None Include="..\..\Source\Assets\vu-meter\back_vu-meter_decore5.png"/>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meter.png"/>
+    <None Include="..\..\Source\Assets\vu-meter\scale_vu-meterno_name.png"/>
+    <None Include="..\..\Source\Assets\vu-meter\vu_meter.png"/>
+    <None Include="..\..\Source\Assets\back_a.png"/>
+    <None Include="..\..\Source\Assets\but_small_rec_off.png"/>
+    <None Include="..\..\Source\Assets\but_small_rec_on.png"/>
+    <None Include="..\..\Source\Assets\landon.png"/>
+    <None Include="..\..\Source\Assets\LED_meter.png"/>
+    <None Include="..\..\Source\Assets\screen.png"/>
     <None Include="..\..\..\modules\JUCE\modules\juce_audio_devices\native\oboe\CMakeLists.txt"/>
     <None Include="..\..\..\modules\JUCE\modules\juce_audio_devices\native\oboe\README.md"/>
     <None Include="..\..\..\modules\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt"/>

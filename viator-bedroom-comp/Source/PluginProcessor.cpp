@@ -13,19 +13,50 @@
 ViatorbedroomcompAudioProcessor::ViatorbedroomcompAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
                        .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
-                      #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
-                     #endif
                        )
+, _treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 #endif
 {
+    // sliders
+    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    {
+        _treeState.addParameterListener(_parameterMap.getSliderParams()[i].paramID, this);
+    }
+    
+    // buttons
+    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    {
+        _treeState.addParameterListener(_parameterMap.getButtonParams()[i].paramID, this);
+    }
+    
+    // menus
+    for (int i = 0; i < _parameterMap.getMenuParams().size(); i++)
+    {
+        _treeState.addParameterListener(_parameterMap.getMenuParams()[i].paramID, this);
+    }
 }
 
 ViatorbedroomcompAudioProcessor::~ViatorbedroomcompAudioProcessor()
 {
+    // sliders
+    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    {
+        _treeState.removeParameterListener(_parameterMap.getSliderParams()[i].paramID, this);
+    }
+    
+    // buttons
+    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    {
+        _treeState.removeParameterListener(_parameterMap.getButtonParams()[i].paramID, this);
+    }
+    
+    // menus
+    for (int i = 0; i < _parameterMap.getMenuParams().size(); i++)
+    {
+        _treeState.removeParameterListener(_parameterMap.getMenuParams()[i].paramID, this);
+    }
 }
 
 //==============================================================================
@@ -90,11 +121,90 @@ void ViatorbedroomcompAudioProcessor::changeProgramName (int index, const juce::
 {
 }
 
+juce::AudioProcessorValueTreeState::ParameterLayout ViatorbedroomcompAudioProcessor::createParameterLayout()
+{
+    std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
+    
+    // sliders
+    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    {
+        auto param = _parameterMap.getSliderParams()[i];
+        auto range = juce::NormalisableRange<float>(param.min, param.max);
+        
+        if (param.isSkew == ViatorParameters::SliderParameterData::SkewType::kSkew)
+        {
+            range.setSkewForCentre(param.center);
+        }
+
+        if (param.isInt == ViatorParameters::SliderParameterData::NumericType::kInt)
+        {
+            params.push_back (std::make_unique<juce::AudioProcessorValueTreeState::Parameter>(juce::ParameterID { param.paramID, _versionNumber }, param.paramName, param.paramName, range, param.initial, valueToTextFunction, textToValueFunction));
+        }
+        
+        else
+        {
+            params.push_back (std::make_unique<juce::AudioParameterFloat>(juce::ParameterID { param.paramID, _versionNumber }, param.paramName, range, param.initial));
+        }
+    }
+    
+    // buttons
+    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    {
+        auto param = _parameterMap.getButtonParams()[i];
+        params.push_back (std::make_unique<juce::AudioParameterBool>(juce::ParameterID { param.paramID, _versionNumber }, param.paramName, _parameterMap.getButtonParams()[i].initial));
+    }
+    
+    // menus
+    for (int i = 0; i < _parameterMap.getMenuParams().size(); i++)
+    {
+        auto param = _parameterMap.getMenuParams()[i];
+        params.push_back (std::make_unique<juce::AudioParameterInt>(juce::ParameterID { param.paramID, 1 }, param.paramName, param.min, param.max, param.defaultIndex));
+    }
+    
+    return { params.begin(), params.end() };
+}
+
+void ViatorbedroomcompAudioProcessor::parameterChanged(const juce::String &parameterID, float newValue)
+
+{
+    if (_spec.sampleRate < 44100.0f)
+        return;
+    
+    updateParameters();
+    
+}
+
+void ViatorbedroomcompAudioProcessor::updateParameters()
+{
+    // comp 1 params
+    auto comp1Gain = _treeState.getRawParameterValue(ViatorParameters::comp1InputID)->load();
+    auto comp1Volume = _treeState.getRawParameterValue(ViatorParameters::comp1OutputID)->load();
+    auto comp1Mix = _treeState.getRawParameterValue(ViatorParameters::comp1MixID)->load();
+    auto thresh1 = _treeState.getRawParameterValue(ViatorParameters::comp1ThreshID)->load();
+    auto ratio1 = _treeState.getRawParameterValue(ViatorParameters::comp1RatioID)->load();
+    auto attack1 = _treeState.getRawParameterValue(ViatorParameters::comp1AttackID)->load();
+    auto release1 = _treeState.getRawParameterValue(ViatorParameters::comp1ReleaseID)->load();
+    auto knee1 = _treeState.getRawParameterValue(ViatorParameters::comp1KneeID)->load();
+    auto hpf1 = _treeState.getRawParameterValue(ViatorParameters::comp1HPFID)->load();
+    auto type1 = _treeState.getRawParameterValue(ViatorParameters::comp1TypeID)->load();
+    
+    compressorModule.setInputGain(comp1Gain);
+    compressorModule.setOutputGain(comp1Volume);
+    compressorModule.setMix(comp1Mix);
+    compressorModule.setParameters(thresh1, ratio1, attack1, release1, knee1, hpf1);
+    compressorModule.setCompressorType(static_cast<viator_dsp::Compressor<float>::CompressorType>(type1));
+}
+
 //==============================================================================
 void ViatorbedroomcompAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    _spec.sampleRate = sampleRate;
+    _spec.numChannels = getTotalNumOutputChannels();
+    _spec.maximumBlockSize = samplesPerBlock;
+    
+    compressorModule.prepareModule(_spec);
+    compressorModule.reset();
+    compressorModule.setCompressorType(viator_dsp::Compressor<float>::CompressorType::kVca);
 }
 
 void ViatorbedroomcompAudioProcessor::releaseResources()
@@ -131,31 +241,30 @@ bool ViatorbedroomcompAudioProcessor::isBusesLayoutSupported (const BusesLayout&
 
 void ViatorbedroomcompAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    juce::ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
-    auto totalNumOutputChannels = getTotalNumOutputChannels();
+    juce::dsp::AudioBlock<float> block {buffer};
+    compressorModule.process(juce::dsp::ProcessContextReplacing<float>(block));
+}
 
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
-
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+void ViatorbedroomcompAudioProcessor::calculatePeakSignal(juce::AudioBuffer<float> &buffer)
+{
+    levelGain.skip(buffer.getNumSamples());
+    peakDB = buffer.getMagnitude(0, 0, buffer.getNumSamples());
+    rmsDB = juce::Decibels::gainToDecibels(buffer.getRMSLevel(0, 0, buffer.getNumSamples()));
+    
+    if (peakDB < levelGain.getCurrentValue())
     {
-        auto* channelData = buffer.getWritePointer (channel);
-
-        // ..do something to the data...
+        levelGain.setTargetValue(peakDB);
     }
+
+    else
+    {
+        levelGain.setCurrentAndTargetValue(peakDB);
+    }
+}
+
+float ViatorbedroomcompAudioProcessor::getCurrentPeakSignal()
+{
+    return levelGain.getNextValue();
 }
 
 //==============================================================================
@@ -172,15 +281,22 @@ juce::AudioProcessorEditor* ViatorbedroomcompAudioProcessor::createEditor()
 //==============================================================================
 void ViatorbedroomcompAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    _treeState.state.appendChild(variableTree, nullptr);
+    juce::MemoryOutputStream stream(destData, false);
+    _treeState.state.writeToStream (stream);
 }
 
 void ViatorbedroomcompAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    auto tree = juce::ValueTree::readFromData (data, size_t(sizeInBytes));
+    variableTree = tree.getChildWithName("Variables");
+    
+    if (tree.isValid())
+    {
+        _treeState.state = tree;
+        _width = variableTree.getProperty("width");
+        _height = variableTree.getProperty("height");
+    }
 }
 
 //==============================================================================

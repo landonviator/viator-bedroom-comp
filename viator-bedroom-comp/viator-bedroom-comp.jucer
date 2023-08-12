@@ -5,6 +5,66 @@
               companyName="Viator DSP">
   <MAINGROUP id="wBBXRb" name="viator-bedroom-comp">
     <GROUP id="{BDB0CB11-F836-D364-1E2E-E375BE190F2C}" name="Source">
+      <GROUP id="{C0EB66F6-22C9-F3E8-7B2A-2FC99FBA80CB}" name="Assets">
+        <GROUP id="{6B4A89A1-9101-056B-CFCE-93463C4B7E04}" name="decor">
+          <FILE id="yw84ql" name="decor_grid.png" compile="0" resource="1" file="Source/Assets/decor/decor_grid.png"/>
+          <FILE id="H6YoHr" name="screw.png" compile="0" resource="1" file="Source/Assets/decor/screw.png"/>
+        </GROUP>
+        <GROUP id="{BE8A2EB7-7173-2692-8C37-BFE2C36B72C3}" name="faders">
+          <FILE id="rJCwk7" name="Ver_flat_slider.png" compile="0" resource="1"
+                file="Source/Assets/faders/Ver_flat_slider.png"/>
+          <FILE id="mbSzlV" name="Ver_slider.png" compile="0" resource="1" file="Source/Assets/faders/Ver_slider.png"/>
+        </GROUP>
+        <GROUP id="{5A85A9B2-336B-78AB-ECDA-228A4D1952FB}" name="knobs">
+          <FILE id="Jv98ya" name="Knob_01.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_01.png"/>
+          <FILE id="UYKoT7" name="Knob_02.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_02.png"/>
+          <FILE id="srPjr2" name="Knob_03.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_03.png"/>
+          <FILE id="iqkXxs" name="Knob_04.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_04.png"/>
+          <FILE id="nIccXR" name="Knob_05.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_05.png"/>
+          <FILE id="Zi7bke" name="Knob_06.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_06.png"/>
+          <FILE id="l2Ms7L" name="Knob_07.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_07.png"/>
+          <FILE id="WJV62R" name="Knob_08.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_08.png"/>
+          <FILE id="F68nC4" name="Knob_09.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_09.png"/>
+          <FILE id="fgfetH" name="Knob_10.png" compile="0" resource="1" file="Source/Assets/knobs/Knob_10.png"/>
+        </GROUP>
+        <GROUP id="{17001AA2-D0BC-F91B-2400-1482F666953A}" name="vu-meter">
+          <FILE id="aAMZWs" name="back_vu-meter_decore5.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/back_vu-meter_decore5.png"/>
+          <FILE id="ZHZGrW" name="scale_vu-meter.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meter.png"/>
+          <FILE id="yLTaMa" name="scale_vu-meterno_name.png" compile="0" resource="1"
+                file="Source/Assets/vu-meter/scale_vu-meterno_name.png"/>
+          <FILE id="cEIt9j" name="vu_meter.png" compile="0" resource="1" file="Source/Assets/vu-meter/vu_meter.png"/>
+        </GROUP>
+        <FILE id="ahkHXi" name="back_a.png" compile="0" resource="1" file="Source/Assets/back_a.png"/>
+        <FILE id="SwZMJn" name="but_small_rec_off.png" compile="0" resource="1"
+              file="Source/Assets/but_small_rec_off.png"/>
+        <FILE id="F1gok2" name="but_small_rec_on.png" compile="0" resource="1"
+              file="Source/Assets/but_small_rec_on.png"/>
+        <FILE id="thuupR" name="landon.png" compile="0" resource="1" file="Source/Assets/landon.png"/>
+        <FILE id="IPEgxM" name="LED_meter.png" compile="0" resource="1" file="Source/Assets/LED_meter.png"/>
+        <FILE id="Jz81DU" name="screen.png" compile="0" resource="1" file="Source/Assets/screen.png"/>
+      </GROUP>
+      <GROUP id="{9D435DCA-4916-01E6-3F8D-F721E92442AD}" name="components">
+        <GROUP id="{9CFD6D23-9ECA-A0E3-AC9B-4FB15E6E64B9}" name="plugin modules">
+          <FILE id="NlG0FM" name="CompressorComp.cpp" compile="1" resource="0"
+                file="Source/components/plugin modules/CompressorComp.cpp"/>
+          <FILE id="yUMSba" name="CompressorComp.h" compile="0" resource="0"
+                file="Source/components/plugin modules/CompressorComp.h"/>
+        </GROUP>
+        <FILE id="Ewd6wf" name="Header.cpp" compile="1" resource="0" file="Source/components/Header.cpp"/>
+        <FILE id="YK3a85" name="Header.h" compile="0" resource="0" file="Source/components/Header.h"/>
+      </GROUP>
+      <GROUP id="{FFFAE8E2-5F90-A2E8-1DE4-9DA754556ADF}" name="Globals">
+        <FILE id="nPIzue" name="Globals.cpp" compile="1" resource="0" file="Source/Globals/Globals.cpp"/>
+        <FILE id="Z0molG" name="Globals.h" compile="0" resource="0" file="Source/Globals/Globals.h"/>
+        <FILE id="oscIIx" name="Parameters.cpp" compile="1" resource="0" file="Source/Globals/Parameters.cpp"/>
+        <FILE id="iWvdtq" name="Parameters.h" compile="0" resource="0" file="Source/Globals/Parameters.h"/>
+      </GROUP>
+      <GROUP id="{9BA057DE-5E0B-9A81-3B8E-11739CF3C2AB}" name="LAF">
+        <FILE id="EKWnof" name="Colors.cpp" compile="1" resource="0" file="Source/LAF/Colors.cpp"/>
+        <FILE id="IraNQH" name="Colors.h" compile="0" resource="0" file="Source/LAF/Colors.h"/>
+      </GROUP>
       <FILE id="f7iygm" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="mWB2Gx" name="PluginProcessor.h" compile="0" resource="0"
