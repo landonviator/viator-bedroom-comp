@@ -204,7 +204,7 @@ void ViatorbedroomcompAudioProcessor::prepareToPlay (double sampleRate, int samp
     
     compressorModule.prepareModule(_spec);
     compressorModule.reset();
-    compressorModule.setCompressorType(viator_dsp::Compressor<float>::CompressorType::kVca);
+    updateParameters();
 }
 
 void ViatorbedroomcompAudioProcessor::releaseResources()
