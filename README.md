@@ -12,6 +12,11 @@ This repo includes:
 - [Compressor DSP class](https://github.com/landonviator/viatordsp/blob/main/viator_modules/viator_dsp/Dynamics/Compressor.h) with attack, release, threshold, ratio, hpf, and knee parameters
 - [Projucer Project](https://github.com/landonviator/viator-bedroom-comp/blob/main/viator-bedroom-comp/viator-bedroom-comp.jucer) built on top of the compressor dsp class
 
+### How to download a build
+
+You can get a build of Bedroom Comp MkII either from my [Gumroad](https://viatordsp.gumroad.com/l/sbnuyp) post or by downloading a build artifact from the repo's GitHub actions run.
+From the [main code page](https://github.com/landonviator/viator-bedroom-comp) navigate to the _Actions_ tab, click the latest green workflow run, then grab the appropraite build from the _Articats_ section as either Mac AU, Mac VST3, or Windows VST3.
+
 ### Knee Parameter
 
 My interest in nonlinear functions and their role in audio processing has been constant since completing my PhD. While my work focused on using chaotic equations to generate audio signals and modulate parameters in real-time, I've taken a different approach for this project. I aimed to create a unique and impactful knee parameter for Bedroom Comp. I experimented with various trigonometric functions until I achieved a distinctive and appealing knee curve. The result is not a typical knee response, which was intentional. Below, you'll find curves measured in PluginDoctor that illustrate the nonlinearity among the knee, ratio, and threshold. Although labeled "soft" and "hard" knees, the "soft" knee is anything but typical. :wink:
