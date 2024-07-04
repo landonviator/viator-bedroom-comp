@@ -203,6 +203,8 @@ void ViatorbedroomcompAudioProcessor::prepareToPlay (double sampleRate, int samp
     _spec.maximumBlockSize = samplesPerBlock;
     
     compressorModule.prepareModule(_spec);
+    biquadFilter.prepareModule(_spec);
+    biquadFilter.setParameters(1000.0, 0.5);
     updateParameters();
 }
 
@@ -243,18 +245,19 @@ void ViatorbedroomcompAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     juce::dsp::AudioBlock<float> block {buffer};
     auto compPower = _treeState.getRawParameterValue(ViatorParameters::comp1PowerID)->load();
     
-    if (compPower)
-    {
-        auto data = buffer.getArrayOfWritePointers();
-        
-        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
-        {
-            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
-            {
-                data[channel][sample] = compressorModule.processSample(data[channel][sample], channel);
-            }
-        }
-    }
+    biquadFilter.process(juce::dsp::ProcessContextReplacing<float>(block));
+//    if (compPower)
+//    {
+//        auto data = buffer.getArrayOfWritePointers();
+//
+//        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
+//        {
+//            for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+//            {
+//                data[channel][sample] = compressorModule.processSample(data[channel][sample], channel);
+//            }
+//        }
+//    }
 }
 
 void ViatorbedroomcompAudioProcessor::calculatePeakSignal(juce::AudioBuffer<float> &buffer)

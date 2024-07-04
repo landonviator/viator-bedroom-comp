@@ -155,7 +155,7 @@
  #define JucePlugin_ARAFactoryID           "com.ViatorDSP.viatorbedroomcomp.factory"
 #endif
 #ifndef  JucePlugin_ARADocumentArchiveID
- #define JucePlugin_ARADocumentArchiveID   "com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0"
+ #define JucePlugin_ARADocumentArchiveID   "com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0"
 #endif
 #ifndef  JucePlugin_ARACompatibleArchiveIDs
  #define JucePlugin_ARACompatibleArchiveIDs  ""

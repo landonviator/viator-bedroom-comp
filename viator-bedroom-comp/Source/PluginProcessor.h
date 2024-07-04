@@ -1,6 +1,7 @@
 #pragma once
 #include <JuceHeader.h>
 #include "Globals/Parameters.h"
+#include "XMTFilter.h"
 
 class ViatorbedroomcompAudioProcessor  : public juce::AudioProcessor
 , public juce::AudioProcessorValueTreeState::Listener
@@ -70,6 +71,7 @@ public:
 private:
     juce::dsp::ProcessSpec _spec;
     viator_dsp::Compressor<float> compressorModule;
+    BiquadFilter<float> biquadFilter;
     
     // parameters
     juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();

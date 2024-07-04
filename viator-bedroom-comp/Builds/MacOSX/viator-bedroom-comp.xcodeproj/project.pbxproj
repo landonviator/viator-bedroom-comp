@@ -58,6 +58,7 @@
 		84F82B33CE5CB4F9E9548EDF /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 7995E893C3501F11F1F2EAC7; };
 		8B955F853A169981757355D4 /* PluginEditor.cpp */ = {isa = PBXBuildFile; fileRef = AF0D91CFDE2EFD2E6BD0CE80; };
 		8C552B6C5056E493E83C4118 /* Header.cpp */ = {isa = PBXBuildFile; fileRef = 4F3EB2AE2E15992F70CA0B35; };
+		8DE1951669208324994AEE35 /* XMTFilter.cpp */ = {isa = PBXBuildFile; fileRef = 2150DBDC925CBB704F9682C0; };
 		8F81F50D1A7227E61C55551D /* CompressorComp.cpp */ = {isa = PBXBuildFile; fileRef = 1DC5510408C85368E65BDBAF; };
 		9AFC75AB9082E1263258AF28 /* Parameters.cpp */ = {isa = PBXBuildFile; fileRef = 89073B090093055744B97291; };
 		9D17EDA055E40E0022D7EDFF /* PluginProcessor.cpp */ = {isa = PBXBuildFile; fileRef = 4D5E0B7FBCD63CCCC7DEC899; };
@@ -96,6 +97,7 @@
 		178242E6CF3C2E24803F1BD9 /* landon.png */ /* landon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = landon.png; path = ../../Source/Assets/landon.png; sourceTree = SOURCE_ROOT; };
 		1AE79B58CF4CFC720B9617D7 /* but_small_rec_on.png */ /* but_small_rec_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = but_small_rec_on.png; path = ../../Source/Assets/but_small_rec_on.png; sourceTree = SOURCE_ROOT; };
 		1DC5510408C85368E65BDBAF /* CompressorComp.cpp */ /* CompressorComp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CompressorComp.cpp; path = "../../Source/components/plugin modules/CompressorComp.cpp"; sourceTree = SOURCE_ROOT; };
+		2150DBDC925CBB704F9682C0 /* XMTFilter.cpp */ /* XMTFilter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XMTFilter.cpp; path = ../../Source/XMTFilter.cpp; sourceTree = SOURCE_ROOT; };
 		2392BC37CF34545CAB0628D2 /* BinaryData7.cpp */ /* BinaryData7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData7.cpp; path = ../../JuceLibraryCode/BinaryData7.cpp; sourceTree = SOURCE_ROOT; };
 		241707CB25851295B4359E5B /* vu_meter.png */ /* vu_meter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vu_meter.png; path = "../../Source/Assets/vu-meter/vu_meter.png"; sourceTree = SOURCE_ROOT; };
 		242D24845D0FC61BDA84222D /* include_juce_audio_plugin_client_VST3.mm */ /* include_juce_audio_plugin_client_VST3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST3.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.mm; sourceTree = SOURCE_ROOT; };
@@ -191,6 +193,7 @@
 		EAC238939ABC6ECC47F7E2AA /* include_juce_audio_processors.mm */ /* include_juce_audio_processors.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_processors.mm; path = ../../JuceLibraryCode/include_juce_audio_processors.mm; sourceTree = SOURCE_ROOT; };
 		F1AE02B1753284B49225D93A /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = ../../../modules/JUCE/modules/juce_data_structures; sourceTree = SOURCE_ROOT; };
 		F414BA255202E25FFBAAC12A /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
+		F86AEF70FFAF800313C3BBD5 /* XMTFilter.h */ /* XMTFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XMTFilter.h; path = ../../Source/XMTFilter.h; sourceTree = SOURCE_ROOT; };
 		F8E7526C8F3A60BC58FF087B /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -341,6 +344,8 @@
 		42F21A632EAFD95606D0B804 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2150DBDC925CBB704F9682C0,
+				F86AEF70FFAF800313C3BBD5,
 				F4C1CA76BD218F862D338B36,
 				4D6E2C21A4C2CBE823307971,
 				624412FBB785763E7C9E4D99,
@@ -817,6 +822,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE1951669208324994AEE35,
 				8F81F50D1A7227E61C55551D,
 				8C552B6C5056E493E83C4118,
 				BA2014E5D0FEEB3589C4186D,
@@ -1002,7 +1008,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1068,7 +1074,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1119,7 +1125,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1185,7 +1191,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1236,7 +1242,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1302,7 +1308,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1349,7 +1355,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1415,7 +1421,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1461,7 +1467,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1527,7 +1533,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1574,7 +1580,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1640,7 +1646,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1745,7 +1751,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1811,7 +1817,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1857,7 +1863,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1923,7 +1929,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -1969,7 +1975,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -2035,7 +2041,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
@@ -2082,7 +2088,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=0",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70006",
+					"JUCE_PROJUCER_VERSION=0x70007",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -2148,7 +2154,7 @@
 					"JucePlugin_ARAContentTypes=0",
 					"JucePlugin_ARATransformationFlags=0",
 					"JucePlugin_ARAFactoryID=\\\"com.ViatorDSP.viatorbedroomcomp.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.1.0\\\"",
+					"JucePlugin_ARADocumentArchiveID=\\\"com.ViatorDSP.viatorbedroomcomp.aradocumentarchive.1.2.0\\\"",
 					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",

@@ -679,6 +679,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\XMTFilter.cpp">
+      <Filter>viator-bedroom-comp\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\components\plugin modules\CompressorComp.cpp">
       <Filter>viator-bedroom-comp\Source\components\plugin modules</Filter>
     </ClCompile>
@@ -3354,6 +3357,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\XMTFilter.h">
+      <Filter>viator-bedroom-comp\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\components\plugin modules\CompressorComp.h">
       <Filter>viator-bedroom-comp\Source\components\plugin modules</Filter>
     </ClInclude>
